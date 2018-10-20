@@ -2,7 +2,7 @@
 
 namespace Classes;
 
-include "Config/ConfigGlobal.class.php";
+include "../Config/ConfigGlobal.class.php";
 
 use Config\ConfigGlobal;
 
@@ -55,9 +55,9 @@ class Conexao {
 	
 	public function getAll($query, $params) {
 		$bd = $this->getPdo();
-        $prepare = $bd->prepare($query);
+		$prepare = $bd->prepare($query);
         $prepare->setFetchMode(\PDO::FETCH_ASSOC);
-        $prepare->execute($params);
+		$prepare->execute($params);
         $result = $prepare->fetchAll();
         return $result;
     }
